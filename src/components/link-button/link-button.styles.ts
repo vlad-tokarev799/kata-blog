@@ -1,11 +1,10 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export type LinkButtonStyles = {
   success?: boolean;
 };
 
-export const StyledLinkButton = styled(Link)<LinkButtonStyles>`
+export const StyledLinkButton = styled.span<LinkButtonStyles>`
   font-size: 18px;
   line-height: 28px;
   color: ${({ theme }) => theme.heading};

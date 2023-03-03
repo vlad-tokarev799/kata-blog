@@ -1,5 +1,11 @@
+export type PostAuthorType = {
+  username: string;
+  image: string;
+  following: boolean;
+};
+
 export type PostType = {
-  slug: string;
+  slug?: string;
   title: string;
   description: string;
   body: string;
@@ -8,9 +14,14 @@ export type PostType = {
   tagList: string[];
   favorited: boolean;
   favoritesCount: number;
-  author: {
-    username: string;
-    image: string;
-    following: boolean;
-  };
+  author: PostAuthorType;
+};
+
+export type PostsResponse = {
+  articles: PostType[];
+  articlesCount: number;
+};
+
+export type PostResponse = {
+  article: PostType;
 };

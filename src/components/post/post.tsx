@@ -1,17 +1,14 @@
 import React from 'react';
 
-import { PostStyles, StyledPost, StyledPostHeader } from './post.styles';
+import { PostStyles, StyledPost } from './post.styles';
 import { PostType } from '../../types/post';
+import { PostPreview } from '../post-preview/post-preview';
 
 type Props = PostStyles & PostType;
 export const Post = (props: Props) => {
-  const { title } = props;
-
   return (
     <StyledPost>
-      <StyledPostHeader>
-        <h3>{title}</h3>
-      </StyledPostHeader>
+      <PostPreview {...props} />
     </StyledPost>
   );
 };
