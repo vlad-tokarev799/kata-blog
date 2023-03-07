@@ -15,20 +15,30 @@ export const Like = (props: LikeProps) => {
   const { favorited, favoritesCount, slug } = props;
 
   const [liked, setLiked] = useState<boolean>(false);
+  const [count, setCount] = useState<number>(0);
   const [add, remove] = useFavorited(slug);
 
   useEffect(() => {
     setLiked(favorited);
-  }, [favorited]);
+    setCount(favoritesCount);
+  }, [favorited, favoritesCount]);
 
   const likeHandler = () => {
-    liked ? remove() : add();
+    if (liked) {
+      setLiked(false);
+      setCount(count - 1);
+      remove();
+    } else {
+      setLiked(true);
+      setCount(count + 1);
+      add();
+    }
   };
 
   return (
     <StyledLike onClick={likeHandler} active={liked}>
       <ReactSVG src={like} wrapper={'span'} />
-      <span className="likes-count">{favoritesCount}</span>
+      <span className="likes-count">{count}</span>
     </StyledLike>
   );
 };

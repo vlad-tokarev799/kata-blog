@@ -21,6 +21,7 @@ export const Header = () => {
       <Logo />
       {isAuth ? (
         <div className={'auth-btns'}>
+          <LinkButton to={'/new-article'} label={'Create article'} small success />
           <Profile author={{ username, image: avatar }} to={'/profile'} />
           <Button onClick={onLogout} bordered>
             Log out

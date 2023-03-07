@@ -4,7 +4,15 @@ export type PostPreviewStyles = object;
 
 export const StyledPostPreview = styled.div<PostPreviewStyles>`
   .post-description {
-    margin-right: 25%;
     margin-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .post-btns {
+      display: flex;
+      gap: 12px;
+    }
   }
 `;

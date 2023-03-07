@@ -19,7 +19,13 @@ export const StyledInput = styled.div<InputStyles>`
     align-items: flex-start;
   }
 
+  textarea {
+    height: 170px;
+    resize: vertical;
+  }
+
   .input {
+    font-family: inherit;
     background: ${({ theme }) => theme.baseBg};
     border: 1px solid ${({ theme }) => theme.normal};
     border-radius: 4px;
