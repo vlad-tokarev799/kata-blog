@@ -28,8 +28,8 @@ export const Header = () => {
         </div>
       ) : (
         <div className="btns">
-          <LinkButton to={'sign-in-page'} label={'Sign in'} />
-          <LinkButton to={'sign-up-page'} label={'Sign up'} success />
+          <LinkButton to={'/sign-in'} label={'Sign in'} />
+          <LinkButton to={'/sign-up'} label={'Sign up'} success />
         </div>
       )}
     </StyledHeader>
